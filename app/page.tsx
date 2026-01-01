@@ -1,6 +1,5 @@
 "use client"
 
-
 import {
   ArrowRight,
   Mail,
@@ -32,24 +31,14 @@ export default function Home() {
             </Link>
 
             <div className="hidden md:flex items-center gap-8">
-              {["Funciones", "Precios", "Documentación", "Blog"].map((item) => (
-                <Link
-                  key={item}
-                  href="#"
-                  className="text-sm text-[#90E0EF] hover:text-[#CAF0F8] transition-colors duration-200"
-                >
-                  {item}
-                </Link>
-              ))}
+              
             </div>
           </div>
 
           <div className="flex items-center gap-4">
-            <button className="hidden md:block px-4 py-2 text-sm text-[#CAF0F8] hover:bg-[#023E8A]/30 rounded-lg transition-all duration-200">
-              Iniciar sesión
-            </button>
+            
             <button className="px-5 py-2 bg-[#00B4D8] text-[#03045E] text-sm font-medium rounded-full hover:bg-[#48CAE4] transition-all duration-200 shadow-lg shadow-[#00B4D8]/20">
-              Empezar
+              Quiero que me contacten
             </button>
           </div>
         </div>
@@ -76,12 +65,10 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button className="px-8 py-4 bg-[#00B4D8] text-[#03045E] font-medium rounded-full hover:bg-[#48CAE4] transition-all duration-200 shadow-xl shadow-[#00B4D8]/30 flex items-center gap-2 group">
-              Empezar gratis
+              Cotizar
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="px-8 py-4 border border-[#0077B6] text-[#CAF0F8] font-medium rounded-full hover:border-[#00B4D8] hover:bg-[#00B4D8]/5 transition-all duration-200">
-              Ver demo
-            </button>
+            
           </div>
         </div>
       </section>
@@ -145,7 +132,7 @@ export default function Home() {
                 </h3>
 
                 <p className="text-[#ADE8F4] mb-6 leading-relaxed">
-                  Automatizá triage, borradores, derivaciones y seguimientos —
+                  Automatizá todo, borradores, derivaciones y seguimientos —
                   apoyado en tus documentos internos.
                 </p>
 
@@ -155,7 +142,10 @@ export default function Home() {
                     "Respuestas automáticas + etiquetas inteligentes",
                     "Reglas de escalamiento y aprobaciones",
                   ].map((feature) => (
-                    <li key={feature} className="flex items-center gap-3 text-[#90E0EF]">
+                    <li
+                      key={feature}
+                      className="flex items-center gap-3 text-[#90E0EF]"
+                    >
                       <Check className="w-4 h-4 text-[#00B4D8] flex-shrink-0" />
                       <span className="text-sm">{feature}</span>
                     </li>
@@ -208,7 +198,10 @@ export default function Home() {
                     "Conversaciones con contexto",
                     "Captura y enrutamiento de leads",
                   ].map((feature) => (
-                    <li key={feature} className="flex items-center gap-3 text-[#90E0EF]">
+                    <li
+                      key={feature}
+                      className="flex items-center gap-3 text-[#90E0EF]"
+                    >
                       <Check className="w-4 h-4 text-[#00B4D8] flex-shrink-0" />
                       <span className="text-sm">{feature}</span>
                     </li>
@@ -256,14 +249,19 @@ export default function Home() {
                 </p>
 
                 <ul className="space-y-3 mb-6">
-                  {["Segmentos de audiencia", "Personalización con IA", "Analíticas + pruebas A/B"].map(
-                    (feature) => (
-                      <li key={feature} className="flex items-center gap-3 text-[#90E0EF]">
-                        <Check className="w-4 h-4 text-[#00B4D8] flex-shrink-0" />
-                        <span className="text-sm">{feature}</span>
-                      </li>
-                    ),
-                  )}
+                  {[
+                    "Segmentos de audiencia",
+                    "Personalización con IA",
+                    "Analíticas + pruebas A/B",
+                  ].map((feature) => (
+                    <li
+                      key={feature}
+                      className="flex items-center gap-3 text-[#90E0EF]"
+                    >
+                      <Check className="w-4 h-4 text-[#00B4D8] flex-shrink-0" />
+                      <span className="text-sm">{feature}</span>
+                    </li>
+                  ))}
                 </ul>
 
                 <Link
@@ -312,7 +310,10 @@ export default function Home() {
                     "Integraciones y seguridad",
                     "Iteración continua",
                   ].map((feature) => (
-                    <li key={feature} className="flex items-center gap-3 text-[#90E0EF]">
+                    <li
+                      key={feature}
+                      className="flex items-center gap-3 text-[#90E0EF]"
+                    >
                       <Check className="w-4 h-4 text-[#00B4D8] flex-shrink-0" />
                       <span className="text-sm">{feature}</span>
                     </li>
@@ -327,123 +328,6 @@ export default function Home() {
                   <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                 </Link>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section className="relative py-24 px-6">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-medium text-[#CAF0F8] mb-4">
-              Precios simples y transparentes
-            </h2>
-            <p className="text-lg text-[#ADE8F4]">
-              Elegí el plan que mejor se adapte a tu workflow.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Free Tier */}
-            <div className="relative bg-[#03045E]/80 backdrop-blur-sm border border-[#023E8A]/50 rounded-2xl p-8">
-              <div className="mb-8">
-                <h3 className="text-2xl font-medium text-[#CAF0F8] mb-2">Gratis</h3>
-                <div className="flex items-baseline gap-2 mb-4">
-                  <span className="text-5xl font-medium text-[#CAF0F8]">$0</span>
-                  <span className="text-[#90E0EF]">/mes</span>
-                </div>
-                <p className="text-[#ADE8F4]">Ideal para probar Fluxio</p>
-              </div>
-
-              <ul className="space-y-4 mb-8">
-                {[
-                  "Hasta 100 automatizaciones/mes",
-                  "1 agente de IA",
-                  "Integraciones básicas",
-                  "Soporte de la comunidad",
-                ].map((feature) => (
-                  <li key={feature} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-[#00B4D8] flex-shrink-0 mt-0.5" />
-                    <span className="text-[#90E0EF]">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <button className="w-full px-6 py-3 border border-[#0077B6] text-[#CAF0F8] font-medium rounded-full hover:border-[#00B4D8] hover:bg-[#00B4D8]/5 transition-all duration-200">
-                Empezar
-              </button>
-            </div>
-
-            {/* Pro Tier - Recommended */}
-            <div className="relative bg-[#03045E]/80 backdrop-blur-sm border-2 border-[#00B4D8] rounded-2xl p-8 shadow-xl shadow-[#00B4D8]/20">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                <span className="inline-block px-4 py-1 bg-[#00B4D8] text-[#03045E] text-sm font-medium rounded-full">
-                  Recomendado
-                </span>
-              </div>
-
-              <div className="absolute inset-0 bg-gradient-to-br from-[#00B4D8]/10 to-transparent rounded-2xl pointer-events-none" />
-
-              <div className="relative mb-8">
-                <h3 className="text-2xl font-medium text-[#CAF0F8] mb-2">Pro</h3>
-                <div className="flex items-baseline gap-2 mb-4">
-                  <span className="text-5xl font-medium text-[#CAF0F8]">$29</span>
-                  <span className="text-[#90E0EF]">/mes</span>
-                </div>
-                <p className="text-[#ADE8F4]">Para equipos y negocios en crecimiento</p>
-              </div>
-
-              <ul className="space-y-4 mb-8">
-                {[
-                  "Automatizaciones ilimitadas",
-                  "5 agentes de IA",
-                  "Todas las integraciones",
-                  "Soporte prioritario",
-                  "Analíticas avanzadas",
-                  "Flujos personalizados",
-                ].map((feature) => (
-                  <li key={feature} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-[#00B4D8] flex-shrink-0 mt-0.5" />
-                    <span className="text-[#90E0EF]">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <button className="w-full px-6 py-3 bg-[#00B4D8] text-[#03045E] font-medium rounded-full hover:bg-[#48CAE4] transition-all duration-200 shadow-lg shadow-[#00B4D8]/30">
-                Iniciar prueba gratis
-              </button>
-            </div>
-
-            {/* Enterprise Tier */}
-            <div className="relative bg-[#03045E]/80 backdrop-blur-sm border border-[#023E8A]/50 rounded-2xl p-8">
-              <div className="mb-8">
-                <h3 className="text-2xl font-medium text-[#CAF0F8] mb-2">Enterprise</h3>
-                <div className="flex items-baseline gap-2 mb-4">
-                  <span className="text-5xl font-medium text-[#CAF0F8]">A medida</span>
-                </div>
-                <p className="text-[#ADE8F4]">Para operaciones a gran escala</p>
-              </div>
-
-              <ul className="space-y-4 mb-8">
-                {[
-                  "Todo ilimitado",
-                  "Agentes de IA ilimitados",
-                  "Integraciones a medida",
-                  "Soporte dedicado",
-                  "Garantías SLA",
-                  "Despliegue on-premise",
-                ].map((feature) => (
-                  <li key={feature} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-[#00B4D8] flex-shrink-0 mt-0.5" />
-                    <span className="text-[#90E0EF]">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <button className="w-full px-6 py-3 border border-[#0077B6] text-[#CAF0F8] font-medium rounded-full hover:border-[#00B4D8] hover:bg-[#00B4D8]/5 transition-all duration-200">
-                Contactar ventas
-              </button>
             </div>
           </div>
         </div>
@@ -491,7 +375,7 @@ export default function Home() {
                 ¿Listo para automatizar tu flujo de trabajo?
               </h2>
               <p className="text-lg text-[#ADE8F4] mb-8 max-w-2xl mx-auto">
-                Sumate a miles de equipos que ya usan Fluxio para crear automatizaciones inteligentes.
+                Sumate a miles de equipos que ya usan nos eligieron para crear automatizaciones inteligentes.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -499,9 +383,7 @@ export default function Home() {
                   Empezá a construir ahora
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
-                <button className="px-8 py-4 text-[#CAF0F8] font-medium rounded-full hover:bg-[#00B4D8]/10 transition-all duration-200">
-                  Hablar con ventas
-                </button>
+                
               </div>
             </div>
           </div>
@@ -511,63 +393,21 @@ export default function Home() {
       {/* Footer */}
       <footer className="relative border-t border-[#023E8A]/50 py-12 px-6">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <div className="text-xl font-medium text-[#CAF0F8] mb-4">Fluxio</div>
-              <p className="text-sm text-[#90E0EF]">
-                Automatización de flujos con IA para equipos modernos.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="text-sm font-medium text-[#CAF0F8] mb-4">Producto</h4>
-              <ul className="space-y-2">
-                {["Funciones", "Precios", "Documentación", "API"].map((item) => (
-                  <li key={item}>
-                    <Link href="#" className="text-sm text-[#90E0EF] hover:text-[#CAF0F8] transition-colors">
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-sm font-medium text-[#CAF0F8] mb-4">Empresa</h4>
-              <ul className="space-y-2">
-                {["Acerca de", "Blog", "Carreras", "Prensa"].map((item) => (
-                  <li key={item}>
-                    <Link href="#" className="text-sm text-[#90E0EF] hover:text-[#CAF0F8] transition-colors">
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-sm font-medium text-[#CAF0F8] mb-4">Legal</h4>
-              <ul className="space-y-2">
-                {["Privacidad", "Términos", "Seguridad", "Estado"].map((item) => (
-                  <li key={item}>
-                    <Link href="#" className="text-sm text-[#90E0EF] hover:text-[#CAF0F8] transition-colors">
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+          {/* Top footer grid: removed Empresa + Legal */}
+          
 
           <div className="pt-8 border-t border-[#023E8A]/30 flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-sm text-[#90E0EF]">© 2025 Fluxio. Todos los derechos reservados.</p>
-            <div className="flex items-center gap-6">
-              {["Twitter", "GitHub", "LinkedIn"].map((social) => (
-                <Link key={social} href="#" className="text-sm text-[#90E0EF] hover:text-[#CAF0F8] transition-colors">
-                  {social}
-                </Link>
-              ))}
-            </div>
+
+            {/* Bottom social: only GitHub */}
+            <a
+              href="https://github.com/Jacksix-dev/fluxio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-[#90E0EF] hover:text-[#CAF0F8] transition-colors"
+            >
+              GitHub
+            </a>
           </div>
         </div>
       </footer>
