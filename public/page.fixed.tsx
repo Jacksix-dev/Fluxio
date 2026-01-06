@@ -79,14 +79,19 @@ function IntegrationsCarousel() {
 
   return (
     <div className="relative">
-     
+      {/* Fade edges */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#03045E] to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#03045E] to-transparent z-10" />
 
-      <div className="group overflow-hidden" aria-label="Carousel de integraciones">
+      <div
+        className="group overflow-hidden"
+        aria-label="Carousel de integraciones"
+      >
         <div
           className="
-            flex w-max gap-6 py-10 px-8
+            flex w-max gap-4 py-6 px-6
             motion-reduce:animate-none
-            [animation:scroll_26s_linear_infinite]
+            [animation:scroll_22s_linear_infinite]
             group-hover:[animation-play-state:paused]
             focus-within:[animation-play-state:paused]
           "
@@ -96,26 +101,18 @@ function IntegrationsCarousel() {
             <div
               key={`${it.name}-${idx}`}
               className="
-                min-w-[180px] sm:min-w-[200px]
-                h-[150px]
+                flex items-center gap-3
+                px-5 py-4
                 rounded-2xl
-                border border-[#023E8A]/60
-                bg-[#03045E]/70 backdrop-blur-sm
-                shadow-xl shadow-black/25
-                flex flex-col items-center justify-center text-center
-                px-6 py-6
-                transition-all duration-200
-                hover:border-[#00B4D8]/45 hover:bg-[#03045E]/80
-                focus:outline-none focus:ring-2 focus:ring-[#00B4D8]/35
+                border border-[#023E8A]/50
+                bg-white/5 backdrop-blur-sm
+                shadow-lg shadow-black/20
+                min-w-[210px]
               "
               tabIndex={0}
             >
-              <div className="w-14 h-14 rounded-2xl bg-[#023E8A]/40 border border-white/10 shadow-inner shadow-black/30 flex items-center justify-center">
-                <span className="text-[#00B4D8] drop-shadow-[0_0_12px_rgba(0,180,216,0.35)]">
-                  {it.icon}
-                </span>
-              </div>
-              <div className="mt-4 text-sm font-semibold text-[#CAF0F8]">{it.name}</div>
+              <div className="text-[#CAF0F8]">{it.icon}</div>
+              <div className="text-[#CAF0F8] font-medium">{it.name}</div>
             </div>
           ))}
         </div>
@@ -285,10 +282,10 @@ export default function Home() {
             <p className="text-[#ADE8F4]">Conectamos tus herramientas favoritas</p>
           </div>
 
-        <div className="relative rounded-3xl overflow-hidden border border-[#023E8A]/60 backdrop-blur-sm shadow-2xl shadow-[#00B4D8]/10">
+          <div className="relative rounded-2xl overflow-hidden border border-[#023E8A]/50 shadow-2xl shadow-[#00B4D8]/10">
             <div className="absolute inset-0 bg-gradient-to-br from-[#0077B6]/20 to-transparent pointer-events-none" />
             <IntegrationsCarousel />
-        </div>
+          </div>
         </div>
       </section>
 
