@@ -277,7 +277,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Integrations Carousel (reemplaza Hero Visual) */}
+      {/* Integrations Carouse (reemplaza Hero Visual) */}
       <section className="relative px-6 pb-20 scroll-mt-24" id="integraciones">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-8">
